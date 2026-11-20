@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture Motion｜A 版动效库</title>
+<link rel="stylesheet" href="../template/style.css">
+<main>
+  <div class="motion-stage">
+    <iframe id="original" title="A 版原镜头" src="../examples/transformer-v3/index.html"></iframe>
+    <canvas id="canvas" width="1080" height="1440" aria-label="可换稿镜头的动态预览" hidden></canvas>
+  </div>
+  <section class="editor">
+    <h1>A 版动效库</h1>
+    <nav id="modes" aria-label="选择镜头来源">
+      <button type="button" data-mode="original" aria-pressed="true">A 版原镜头</button>
+      <button type="button" data-mode="course" aria-pressed="false">可换稿镜头</button>
+      <button type="button" data-mode="basics" aria-pressed="false">基础组件</button>
+    </nav>
+    <nav id="recipes" aria-label="选择动效"></nav>
+    <h2 id="selected"></h2>
+    <p id="purpose"></p>
+    <div class="controls">
+      <button id="play" type="button">暂停</button>
+      <input id="seek" aria-label="动效进度" type="range" min="0" max="1" step=".001" value="0">
+      <output id="time"></output>
+    </div>
+    <section id="component" hidden>
+      <label><input id="detail" type="checkbox" checked> 解释层</label>
+      <p>把这一段参数加到课程配置的 <code>shots</code> 中。</p>
+      <pre id="recipe"></pre>
+    </section>
+    <p><a href="../template/index.html">用课程模板组合镜头</a> · <a href="/xixi-motion/index.html">曦曦独立动作</a></p>
+    <p id="error" role="alert"></p>
+  </section>
+</main>
+<script type="module" src="gallery.mjs"></script>
+</html>

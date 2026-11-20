@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "sample_draft",
+  "lines": [
+    {
+      "line_id": "c01",
+      "speaker": "character",
+      "text": "我是曦曦！，把 I love deep learning，翻译成“我爱深度学习”，Transformer 是怎样做到的？",
+      "provisional_start": 0,
+      "provisional_end": 8
+    },
+    {
+      "line_id": "n01",
+      "speaker": "narrator",
+      "text": "我们先看编码器自注意力，四个词，先变成表示",
+      "provisional_start": 8,
+      "provisional_end": 12
+    },
+    {
+      "line_id": "n02",
+      "speaker": "narrator",
+      "text": "同一组表示，经过不同投影，得到 Q、K、V",
+      "provisional_start": 12,
+      "provisional_end": 17
+    },
+    {
+      "line_id": "n03",
+      "speaker": "narrator",
+      "text": "以 love 为例，用它的 Q，和各位置的 K 算匹配",
+      "provisional_start": 17,
+      "provisional_end": 22
+    },
+    {
+      "line_id": "n04a",
+      "speaker": "narrator",
+      "text": "分数先缩放，再经过 Softmax，变成权重",
+      "provisional_start": 22,
+      "provisional_end": 25
+    },
+    {
+      "line_id": "n04b",
+      "speaker": "narrator",
+      "text": "按这些权重，加权汇总 V",
+      "provisional_start": 25,
+      "provisional_end": 29
+    },
+    {
+      "line_id": "c02",
+      "speaker": "character",
+      "text": "嗯！记住，Q、K、V 来自同一条序列，只是经过不同的投影，这就是自注意力！",
+      "provisional_start": 29,
+      "provisional_end": 36
+    },
+    {
+      "line_id": "c03",
+      "speaker": "character",
+      "text": "下节课再见！",
+      "provisional_start": 36,
+      "provisional_end": 40
+    }
+  ]
+}

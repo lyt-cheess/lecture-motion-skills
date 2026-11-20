@@ -1,0 +1,26 @@
+{
+  "title": "A 版动效模板｜自注意力",
+  "shots": [
+    { "effect": "tokens", "seconds": 6, "character": "inspire",
+      "params": { "tokens": ["I", "love", "deep", "learning"], "focus": 1 },
+      "captions": [{ "at": 0, "text": "先看一句话怎样进入编码器" }, { "at": 3, "text": "词元逐个变成带位置的向量" }] },
+    { "effect": "projection", "seconds": 6.5,
+      "params": { "tokens": ["I", "love", "deep", "learning"], "branches": ["Q", "K", "V"], "rows": 4 },
+      "captions": [{ "at": 0, "text": "同一组输入向量汇到一起" }, { "at": 3.2, "text": "经过三种投影，得到 Q、K、V" }] },
+    { "effect": "match", "seconds": 6,
+      "params": { "query": "Q love", "keys": ["K I", "K love", "K deep", "K learning"], "scores": [0, 2.77, 1.39, 0] },
+      "captions": [{ "at": 0, "text": "以 love 为例，拿它的 Q" }, { "at": 2.7, "text": "依次与四个位置的 K 计算分数" }] },
+    { "effect": "weights", "seconds": 5.5,
+      "params": { "labels": ["I", "love", "deep", "learning"], "scores": [0, 2.77, 1.39, 0], "divisor": 2 },
+      "captions": [{ "at": 0, "text": "分数先缩放，再用 Softmax 变成权重" }] },
+    { "effect": "vector-merge", "seconds": 6.5,
+      "params": { "labels": ["V₁", "V₂", "V₃", "V₄"], "weights": [0.125, 0.5, 0.25, 0.125], "output": "O love" },
+      "captions": [{ "at": 0, "text": "按刚才的权重，汇总四路 V" }, { "at": 3.2, "text": "汇合后得到 love 位置的输出" }] },
+    { "effect": "focus", "seconds": 4,
+      "params": { "labels": ["Q", "K", "V"], "focus": 1, "detail": "Q · Kᵀ" },
+      "captions": [{ "at": 0, "text": "回看最关键的一步，Q 与 K 匹配" }] },
+    { "effect": "carry-cut", "seconds": 5.5, "character": "remember",
+      "params": { "carry": "X", "before": ["X₁", "X₂", "X₃"], "after": ["Q", "K", "V"] },
+      "captions": [{ "at": 0, "text": "记住，Q、K、V 来自同一条序列" }] }
+  ]
+}

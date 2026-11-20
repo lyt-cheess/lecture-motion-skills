@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "course": {
+    "series": "Transformer从零到一",
+    "topic": "一句翻译，怎样经过三处注意力？",
+    "show_series": false
+  },
+  "frame": {
+    "width": 1080,
+    "height": 1440,
+    "fps": 30
+  },
+  "theme": {
+    "background": "#ffffff",
+    "text": "#000000",
+    "primary": "#8054e8",
+    "primary_soft": "#eee6ff",
+    "secondary": "#86dfa3",
+    "secondary_soft": "#e8f8ed"
+  },
+  "background": {
+    "file": null,
+    "fit": "cover",
+    "opacity": 1
+  },
+  "character": {
+    "name": "曦曦",
+    "classroom": "../../../xixi-motion/assets/xixi-classroom.png",
+    "expression": "../../../xixi-motion/assets/xixi-expression.png",
+    "original_background": "white",
+    "recolored_or_redrawn": false,
+    "teacher": "../../../xixi-motion/assets/xixi-teacher.png",
+    "teaching_height": 245,
+    "opening_height": 330,
+    "closing_height": 350
+  },
+  "timing_status": "provisional_animatic_no_audio"
+}

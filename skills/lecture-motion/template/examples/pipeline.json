@@ -1,0 +1,14 @@
+{
+  "title": "请求如何通过处理流水线",
+  "theme": { "primary": "#4b48b8", "primarySoft": "#e8e7fc", "secondary": "#237a51", "secondarySoft": "#e2f2e5" },
+  "shots": [
+    { "effect": "move", "seconds": 6.5, "params": { "item": "请求", "stops": ["入口", "校验", "队列"] },
+      "captions": [{ "at": 0, "text": "请求从入口经过校验，再进入队列" }] },
+    { "effect": "mask", "seconds": 7, "params": { "query": "规则", "targets": ["A", "B", "C", "D"], "allowed": 3, "blockedLabel": "" },
+      "captions": [{ "at": 0, "text": "处理之前，先检查访问条件" }, { "at": 3.4, "text": "通过条件的三个请求继续执行" }] },
+    { "effect": "split", "seconds": 6, "params": { "source": "请求", "branches": ["主服务", "审计"] },
+      "captions": [{ "at": 0, "text": "收到请求后，主服务和审计各走一路" }] },
+    { "effect": "compare", "seconds": 8, "params": { "items": ["A", "B", "C"] },
+      "captions": [{ "at": 0, "text": "独立的任务可以同时完成" }, { "at": 3.7, "text": "依赖前一步的任务则要逐个处理" }] }
+  ]
+}

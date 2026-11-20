@@ -1,0 +1,17 @@
+{
+  "title": "从输入到掩码自注意力",
+  "shots": [
+    { "effect": "move", "seconds": 5, "params": { "item": "X", "stops": ["词", "表示", "位置"] },
+      "captions": [{ "at": 0, "text": "词元先变成带有位置信息的表示" }] },
+    { "effect": "split", "seconds": 6, "params": { "source": "X", "branches": ["Q", "K", "V"] },
+      "captions": [{ "at": 0, "text": "同一组表示经过三个投影" }, { "at": 3, "text": "得到 Q、K 和 V" }] },
+    { "effect": "matrix", "seconds": 6, "params": { "rows": ["Q₁", "Q₂", "Q₃"], "columns": ["K₁", "K₂", "K₃"], "axis": "row", "focus": 1 },
+      "captions": [{ "at": 0, "text": "每个查询与各位置的 K 计算分数" }, { "at": 3.3, "text": "高亮的是第二个位置的分数" }] },
+    { "effect": "mask", "seconds": 7, "params": { "query": "Q₂", "targets": ["K₁", "K₂", "K₃"], "allowed": 2 },
+      "captions": [{ "at": 0, "text": "解码器的查询只能读自己和前面" }, { "at": 3.55, "text": "未来位置被遮住，权重变为零" }] },
+    { "effect": "merge", "seconds": 6, "params": { "inputs": ["V₁", "V₂"], "weights": [0.25, 0.75], "output": "O₂" },
+      "captions": [{ "at": 0, "text": "把能读取的位置归一化成权重" }, { "at": 2.8, "text": "依照权重汇总两个位置的 V" }] },
+    { "effect": "compare", "seconds": 6, "params": { "items": ["A", "B", "C"] },
+      "captions": [{ "at": 0, "text": "训练时可以并行计算各位置" }, { "at": 3, "text": "生成时逐步得到新的词元" }] }
+  ]
+}

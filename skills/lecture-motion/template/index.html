@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lecture Motion｜课程模板</title>
+<link rel="stylesheet" href="style.css">
+<main>
+  <canvas id="canvas" width="1080" height="1440" aria-label="竖屏课程动效预览"></canvas>
+  <section class="editor">
+    <h1 id="course">课程模板</h1>
+    <div class="controls">
+      <button id="play" type="button">播放</button>
+      <input id="seek" aria-label="播放进度" type="range" min="0" step=".01" value="0">
+      <output id="time">0.0 秒</output>
+    </div>
+    <nav aria-label="工程操作">
+      <label><input id="detail" type="checkbox" checked> 解释层</label>
+      <label><input id="subtitles" type="checkbox" checked> 字幕</label>
+      <button id="srt" type="button">导出 SRT</button>
+    </nav>
+    <label for="preset">示例口播</label>
+    <select id="preset">
+      <option value="v3-style">A 版动效模板</option>
+      <option value="attention">注意力 · 基础镜头</option>
+      <option value="pipeline">请求处理</option>
+    </select>
+    <p><a href="../motion/gallery.html">打开六种动效预览</a></p>
+    <details>
+      <summary>换口播、镜头和配色</summary>
+      <label for="config">课程 JSON</label>
+      <textarea id="config" spellcheck="false"></textarea>
+      <button id="apply" type="button">应用配置</button>
+      <button id="save" type="button">保存已应用配置</button>
+    </details>
+    <p id="error" role="alert"></p>
+  </section>
+</main>
+<script type="module" src="scripts/player.mjs"></script>
+</html>

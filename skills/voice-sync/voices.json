@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "not_recorded",
+  "character": {
+    "name": "曦曦",
+    "voice_id": null,
+    "audio_file": null
+  },
+  "narrator": {
+    "voice_id": null,
+    "audio_file": null
+  },
+  "alignment_status": "not_started"
+}
